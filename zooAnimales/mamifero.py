@@ -66,3 +66,4 @@ class Mamifero(Animal):
     @staticmethod
     def cantidadMamiferos():
         return len(Mamifero._listado)
+    
