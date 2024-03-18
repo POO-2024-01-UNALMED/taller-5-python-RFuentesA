@@ -5,41 +5,38 @@ class Animal:
     _totalAnimales = 0
     _zona = ""
 
-    def __init__ (self, totalAnimales, nombre, edad, habitat, genero, zona): 
+    def __init__ (self, nombre, edad, habitat, genero): 
         self._nombre = nombre
         self._edad = edad
         self._habitat = habitat
         self._genero = genero
         Animal._totalAnimales += 1
 
-    def getTotalAnimales (self):
-        return _totalAnimales
-    
-
-    def setNombre(self, nombre):
-        self._nombre = nombre
-
     def getNombre(self):
         return self._nombre
 
-
-    def setEdad(self, edad):
-        self._edad = edad
     def getEdad(self):
         return self._edad
-
-
-    def setHabitat(self, habitat):
-        self._habitat = habitat
 
     def getHabitat(self):
         return self._habitat
     
-    def setGenero(self, genero):
-        self._genero = genero
-
     def getGenero(self):
         return self._genero
 
-    def __Str__ (self):
-        return '"Mi nombre es ' + self._nombre + ', tengo una edad de ' + self._edad + ', habito en ' + self._habitat + ' y mi genero es ' + self._genero + ', la zona en la que me ubico es ' + self._zona + ', en el ' + self._zoo
+    def toString(self):
+        n = self._nombre
+        e = self._edad
+        h = self._habitat
+        g = self._genero
+
+        mensaje = "Mi nombre es " + n + "," + " tengo una edad de " + str(e) + ", habito en " + h + " y mi genero es " + g
+
+        if isinstance(self._zona, Zona):
+            zonita = self._zona[0].getNombre()
+            zoo = self._zona[0].getZoo().getNombre()
+            mensaje += ", la zona en la que me ubico es " + zonita + ", en el " + zoo
+            return mensaje
+        
+        else:
+            return mensaje
