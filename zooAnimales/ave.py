@@ -50,4 +50,4 @@ class Ave(Animal):
 
     @staticmethod
     def cantidadAves():
-        return len(Ave._listado)
+        return len(Ave._listado) 
