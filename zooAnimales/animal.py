@@ -23,6 +23,12 @@ class Animal:
     
     def getGenero(self):
         return self._genero
+    
+    def agregarzonas(self, zona = None):
+        
+        if isinstance(zona, Zona):
+            self._zona.pop()
+            self._zona.append(zona)
 
     def toString(self):
         n = self._nombre
@@ -40,3 +46,18 @@ class Animal:
         
         else:
             return mensaje
+        
+    @staticmethod
+    def totalPorTipo():
+        mamiferos = str(zooAnimales.mamifero.Mamifero.cantidadMamiferos())
+        aves = str(zooAnimales.ave.Ave.cantidadAves())
+        reptiles = str(zooAnimales.reptil.Reptil.cantidadReptiles())
+        peces = str(zooAnimales.pez.Pez.cantidadPeces())
+        anfibios = str(zooAnimales.anfibio.Anfibio.cantidadAnffibios())
+
+        mensaje = "Mamiferos : " + mamiferos
+        mensaje += "\nAves : " + aves
+        mensaje += "\nReptiles : " + reptiles
+        mensaje += "\nPeces : " + peces
+        mensaje += "\nAnfibios : " + anfibios
+        return mensaje
